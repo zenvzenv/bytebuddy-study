@@ -14,17 +14,17 @@ public class SubClassInterceptor3 {
      */
     @RuntimeType
     public Object aaa(
-            // 表示被拦截的目标对象，只有拦截实例方法时可用
+            // 表示被拦截的目标对象，只有拦截实例方法或构造方法时可用
             @This Object targetObj,
             // 表示被拦截的方法，实例方法或静态方法时可用
             @Origin Method targetMethod,
             // 目标方法的参数
             @AllArguments Object[] targetMethodArgs,
-            // 表示被拦截的目标对象，只有拦截实例方法时可用
+            // 表示被拦截的目标对象，只有拦截实例方法或构造时可用
             @Super Object targetObj2,
             // 如果确定父类，也可用父类直接接受
 //            @Super SubClass SubClass,
-            // 用于调用目标方法
+            // 用于调用目标方法(指的是原始的方法)，配合 rebase 或用 subclass 的方式增强实例方法时使用
             @SuperCall Callable<?> zuper
     ) {
         // targetObj = a.b.SubObj@44821a96

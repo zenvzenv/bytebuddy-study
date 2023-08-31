@@ -15,8 +15,8 @@ import static net.bytebuddy.matcher.ElementMatchers.returns;
  * 对实例方法进行插桩
  * <p>
  * 1. subclass
- * 2. rebase:变基，保留原方法，并重命名为 xx%original()，新方法为 xx
- * 3. redefine:原方法不再保留
+ * 2. rebase:变基，保留原方法，并重命名为 xx%original$9U6HI()，xx 为拦截后的逻辑，命令策略是：默认是和目标类全类名保持一致
+ * 3. redefine:原方法不再保留，命令策略是：默认是和目标类全类名保持一致
  */
 public class SlotInstanceMethod {
     private static final String PATH = GenClass.class.getClassLoader().getResource("").getPath();
