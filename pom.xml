@@ -10,6 +10,8 @@
     <packaging>pom</packaging>
     <modules>
         <module>bytebuddy-test</module>
+        <module>jdk-javaagent</module>
+        <module>bytebuddy-javaagent</module>
     </modules>
 
     <properties>
